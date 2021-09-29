@@ -142,7 +142,11 @@ if (NOT GFLAGS_FOUND)
     message(WARNING "Disable analytical_apps because gflags not found")
 else ()
     add_executable(analytical_apps examples/analytical_apps/flags.cc
+<<<<<<< HEAD
             examples/analytical_apps/run_app.cc)
+=======
+            examples/analytical_apps/run_app.cc examples/analytical_apps/dcore/dcoreoptimized.h examples/analytical_apps/dcore/dcore_optimized_context.h examples/analytical_apps/dcore/get_incoreness.h examples/analytical_apps/dcore/get_incoreness_context.h examples/analytical_apps/dcore/get_outcoreness.h examples/analytical_apps/dcore/get_outcoreness_context.h)
+>>>>>>> dfe656c (dcore decomposition added)
     target_include_directories(analytical_apps PRIVATE
             examples/analytical_apps)
     set_target_properties(analytical_apps PROPERTIES OUTPUT_NAME run_app)

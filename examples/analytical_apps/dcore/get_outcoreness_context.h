@@ -67,9 +67,6 @@ class GetOutCorenessContext : public VertexDataContext<FRAG_T, int> {
            << d << std::endl;
       }
     }
-    VLOG(0) << "Meesgae Number Of frag : " << frag.fid() << "  is  " <<  MessageNum << "  integers \t" ;
-    // std::cerr << "Meesgae Number Of frag : " << frag.fid() << "  is  " <<  MessageNum << "  integers \t" << std::endl;
-    //  if(frag.fid() ==1 ) std::cerr << "Number Of Rounds Of frag: " << frag.fid() << " is  " << NumOfRounds << "\t" << std::endl;
 #ifdef PROFILING
     VLOG(2) << "preprocess_time: " << preprocess_time << "s.";
     VLOG(2) << "exec_time: " << exec_time << "s.";
@@ -79,8 +76,6 @@ class GetOutCorenessContext : public VertexDataContext<FRAG_T, int> {
 
   typename FRAG_T::template vertex_array_t<int>& partial_result;
   typename FRAG_T::template vertex_array_t<std::vector<int>> h_neighbor_value;
-  int MessageNum = 0;
-  int NumOfRounds = 0;
   DenseVertexSet<vid_t> curr_modified, next_modified;
 
 #ifdef PROFILING
