@@ -55,12 +55,10 @@ limitations under the License.
 #include "timer.h"
 #include "wcc/wcc.h"
 #include "wcc/wcc_auto.h"
-<<<<<<< HEAD
-=======
 #include "dcore/dcoreoptimized.h"
 #include "dcore/get_outcoreness.h"
 #include "dcore/get_incoreness.h"
->>>>>>> dfe656c (dcore decomposition added)
+
 
 #ifndef __AFFINITY__
 #define __AFFINITY__ false
@@ -284,9 +282,6 @@ void Run() {
       using AppType = LCC<GraphType>;
       CreateAndQuery<GraphType, AppType>(comm_spec, efile, vfile, out_prefix,
                                          fnum, spec);
-<<<<<<< HEAD
-    } else {
-=======
     } else if (name == "dcoreoptimized") {
       using GraphType = ImmutableEdgecutFragment<OID_T, VID_T, /*VDATA_T*//*int*/std::string, EDATA_T, LoadStrategy::kBothOutIn>;
       using AppType = DcoreOptimized<GraphType>;
@@ -303,7 +298,6 @@ void Run() {
       CreateAndQuery<GraphType, AppType, OID_T>(
           comm_spec, efile, vfile, out_prefix, fnum, spec, FLAGS_sssp_source);
     }else {
->>>>>>> dfe656c (dcore decomposition added)
       LOG(FATAL) << "No avaiable application named [" << name << "].";
     }
   }
